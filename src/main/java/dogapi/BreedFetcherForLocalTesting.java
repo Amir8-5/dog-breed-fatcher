@@ -1,5 +1,6 @@
 package dogapi;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ public class BreedFetcherForLocalTesting implements BreedFetcher {
     private int callCount = 0;
 
     @Override
-    public List<String> getSubBreeds(String breed) {
+    public List<String> getSubBreeds(String breed) throws BreedNotFoundException, IOException {
         callCount++;
         if ("hound".equalsIgnoreCase(breed)) {
             return List.of("afghan", "basset");
